@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developed by mochgilangelangperkasa</title>
+    <style>
+        /* CSS Reset */
+        body {
+            margin: 0;
+            padding: 50px 0; 
+            background-color: #0d1b2a; /* SAPD Dark Blue Tone */
+            background-image: linear-gradient(135deg, #0d1b2a 0%, #050b11 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+            min-height: 100vh; 
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        /* Container Utama */
+        .menu-container {
+            background-color: #ffffff;
+            width: 400px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+            text-align: center;
+            border-top: 5px solid #d4af37; /* Gold Border */
+        }
+
+        /* Header Logo & Teks */
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #1b263b; /* Police Navy Blue */
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Gaya Tombol Navigasi */
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #333;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-left: 5px solid transparent;
+            text-align: left;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        /* Tombol Utama (Laporan SAPD) */
+        .btn-primary {
+            background-color: #1b263b; /* Police Navy Blue */
+        }
+
+        .btn-primary:hover {
+            background-color: #273852;
+            border-left: 10px solid #d4af37; /* Gold Hover */
+            padding-left: 25px;
+        }
+
+        /* Tombol Sekunder */
+        .btn-secondary {
+            background-color: #555;
+        }
+
+        .btn-secondary:hover {
+            background-color: #666;
+            border-left: 10px solid #ccc;
+            padding-left: 25px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            font-size: 10px;
+            color: #aaa;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* Ikon Panah kecil di tombol */
+        .btn::after {
+            content: '>';
+            position: absolute;
+            right: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="header">
+            <h1>SAPD Detective Portal</h1>
+            <p>INTERNAL RECORDS SYSTEM</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="case_assignment.html" class="btn btn-primary">
+                Case Assignment
+            </a>
+
+            <a href="activity_log.html" class="btn btn-primary">
+                Case Journal (Activity Log)
+            </a>
+
+            <a href="Supplemental_Report.html" class="btn btn-primary">
+                Supplemental Report
+            </a>
+
+            <a href="Supervisor_Review.html" class="btn btn-primary">
+                Supervisor Review
+            </a>
+
+            <a href="case_closure.html" class="btn btn-primary">
+                Case Closure
+            </a>
+
+            <a href="https://penal-code-5566a.web.app/" class="btn btn-primary" target="_blank">
+                View Penal Code
+            </a>
+        </div>
+
+        <div class="footer">
+            AUTHORIZED PERSONNEL ONLY<br>
+            San Andreas Police Department - City of Los Santos
+        </div>
+    </div>
+
+</body>
+</html>
