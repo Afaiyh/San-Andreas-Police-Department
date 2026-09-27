@@ -3,300 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAPD Forum - Detective Bureau Records Portal</title>
+    <title>SAPD INTERNAL DB</title>
     <style>
-        /* BBCode Forum Theme Base */
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         body {
-            margin: 0;
-            padding: 30px 15px; 
-            background-color: #0b131e; /* Dark RP Forum Background */
-            background-image: linear-gradient(180deg, #0e1a2b 0%, #070c14 100%);
-            font-family: 'Verdana', 'Segoe UI', Tahoma, Geneva, sans-serif;
-            color: #d1d5db;
-            min-height: 100vh; 
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            background-color: #000000;
+            color: #00ff00; /* Terminal Green */
+            padding: 20px;
         }
 
-        /* Forum Wrapper Container */
-        .forum-wrapper {
-            width: 100%;
-            max-width: 680px;
-            background-color: #121c2b;
-            border: 1px solid #1f314d;
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-            overflow: hidden;
+        .db-box {
+            border: 2px solid #00ff00;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* Forum Header Banner */
-        .forum-banner {
-            background: linear-gradient(90deg, #16263d 0%, #1f3659 100%);
-            border-bottom: 3px solid #cca43b; /* Forum Gold Accent */
-            padding: 20px 25px;
-            position: relative;
+        .header {
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .forum-banner h1 {
-            margin: 0;
-            color: #ffffff;
+        h1 {
             font-size: 20px;
-            font-family: 'Trebuchet MS', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-        }
-
-        .forum-banner .sub-text {
-            margin: 4px 0 0;
-            color: #8da4c4;
-            font-size: 11px;
             font-weight: bold;
-            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
-        /* Forum Breadcrumbs */
-        .breadcrumb {
-            background-color: #0e1724;
-            padding: 10px 20px;
-            font-size: 11px;
-            color: #7b93b5;
-            border-bottom: 1px solid #1a293e;
-        }
-
-        .breadcrumb a {
-            color: #a3c2ee;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        /* Forum Category Header */
-        .category-header {
-            background-color: #1a2a40;
-            color: #e2e8f0;
-            padding: 10px 20px;
+        p.sub {
             font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #283e5e;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin-top: 5px;
         }
 
-        .category-header .badge {
-            background-color: #cca43b;
-            color: #0b131e;
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-
-        /* Thread List Container */
-        .thread-list {
+        .links {
             display: flex;
             flex-direction: column;
         }
 
-        /* Forum Item / Row */
-        .thread-row {
-            display: flex;
-            align-items: center;
-            padding: 14px 20px;
-            border-bottom: 1px solid #182638;
-            background-color: #121c2b;
-            transition: background-color 0.2s ease;
+        a.db-btn {
+            display: block;
+            background-color: #000000;
+            color: #00ff00;
             text-decoration: none;
-            color: inherit;
-        }
-
-        .thread-row:nth-child(even) {
-            background-color: #0f1826;
-        }
-
-        .thread-row:hover {
-            background-color: #18283f;
-        }
-
-        /* Forum Folder/Status Icon */
-        .forum-icon {
-            width: 34px;
-            height: 34px;
-            background-color: #1b2d45;
-            border: 1px solid #2a4366;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: #cca43b;
+            border: 1px solid #00ff00;
+            padding: 12px;
+            margin-bottom: 10px;
             font-weight: bold;
             font-size: 14px;
-            flex-shrink: 0;
         }
 
-        .thread-row:hover .forum-icon {
-            background-color: #cca43b;
-            color: #0b131e;
-            border-color: #e6c15c;
+        a.db-btn:hover {
+            background-color: #00ff00;
+            color: #000000;
         }
 
-        /* Forum Title & Description */
-        .thread-info {
-            flex-grow: 1;
-        }
-
-        .thread-title {
-            color: #63a0e8;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 3px;
-            display: block;
-        }
-
-        .thread-row:hover .thread-title {
-            color: #93c5fd;
-        }
-
-        .thread-desc {
-            color: #8295ab;
+        .notice {
+            border: 1px dashed #00ff00;
+            padding: 10px;
             font-size: 11px;
-            margin: 0;
-            line-height: 1.3;
-        }
-
-        /* Right Action Tag */
-        .thread-action {
-            font-size: 11px;
-            color: #8da4c4;
-            font-weight: bold;
-            padding: 4px 10px;
-            background-color: #18273c;
-            border-radius: 3px;
-            border: 1px solid #253b5c;
-            margin-left: 10px;
-            flex-shrink: 0;
-        }
-
-        .thread-row:hover .thread-action {
-            color: #ffffff;
-            background-color: #274168;
-            border-color: #3b5e94;
-        }
-
-        /* BBCode Footer */
-        .forum-footer {
-            background-color: #0b131e;
-            padding: 15px 20px;
-            font-size: 10px;
-            color: #637792;
+            margin-top: 20px;
             text-align: center;
-            border-top: 1px solid #1a283c;
-            line-height: 1.5;
-        }
-
-        .forum-footer strong {
-            color: #8da4c4;
         }
     </style>
 </head>
 <body>
 
-    <div class="forum-wrapper">
-        
-        <!-- Header Banner -->
-        <div class="forum-banner">
-            <h1>San Andreas Police Department</h1>
-            <div class="sub-text">Detective Bureau Internal Records System</div>
+    <div class="db-box">
+        <div class="header">
+            <h1>[SAPD DB v1.0.4]</h1>
+            <p class="sub">SYS_LOCATION: SAN_ANDREAS/LOS_SANTOS/DETECTIVE_BUREAU</p>
         </div>
 
-        <!-- BBCode Breadcrumb Navigation -->
-        <div class="breadcrumb">
-            <a href="#">Index</a> &raquo; <a href="#">San Andreas Police Dept.</a> &raquo; <a href="#">Detective Bureau</a> &raquo; Internal Database
+        <div class="links">
+            <a href="case_assignment.html" class="db-btn">> 01_CASE_ASSIGNMENT</a>
+            <a href="activity_log.html" class="db-btn">> 02_ACTIVITY_LOG</a>
+            <a href="Supplemental_Report.html" class="db-btn">> 03_SUPPLEMENTAL_REPORT</a>
+            <a href="Supervisor_Review.html" class="db-btn">> 04_SUPERVISOR_REVIEW</a>
+            <a href="case_closure.html" class="db-btn">> 05_CASE_CLOSURE</a>
+            <a href="https://penal-code-5566a.web.app/" target="_blank" class="db-btn">> 06_PENAL_CODE_EXT</a>
         </div>
 
-        <!-- Section Category Header -->
-        <div class="category-header">
-            <span>Detective Portal Archives & Tools</span>
-            <span class="badge">SECURE</span>
+        <div class="notice">
+            WARNING: RESTRICTED ACCESS. ALL LOGS ARE AUDITED.<br>
+            SAN ANDREAS POLICE DEPARTMENT
         </div>
-
-        <!-- BBCode Thread Rows / Links -->
-        <div class="thread-list">
-            
-            <a href="case_assignment.html" class="thread-row">
-                <div class="forum-icon">&#128196;</div>
-                <div class="thread-info">
-                    <span class="thread-title">[FORM] Case Assignment</span>
-                    <p class="thread-desc">Submit new case assignments and assign lead investigators.</p>
-                </div>
-                <div class="thread-action">ACCESS &raquo;</div>
-            </a>
-
-            <a href="activity_log.html" class="thread-row">
-                <div class="forum-icon">&#128214;</div>
-                <div class="thread-info">
-                    <span class="thread-title">[LOG] Case Journal (Activity Log)</span>
-                    <p class="thread-desc">Record ongoing investigation updates, evidence, and chronological logs.</p>
-                </div>
-                <div class="thread-action">ACCESS &raquo;</div>
-            </a>
-
-            <a href="Supplemental_Report.html" class="thread-row">
-                <div class="forum-icon">&#128221;</div>
-                <div class="thread-info">
-                    <span class="thread-title">[REP] Supplemental Report</span>
-                    <p class="thread-desc">Attach additional suspect details, forensics, or witness statements.</p>
-                </div>
-                <div class="thread-action">ACCESS &raquo;</div>
-            </a>
-
-            <a href="Supervisor_Review.html" class="thread-row">
-                <div class="forum-icon">&#128065;</div>
-                <div class="thread-info">
-                    <span class="thread-title">[REV] Supervisor Review</span>
-                    <p class="thread-desc">Command staff evaluation, approval notes, and status updates.</p>
-                </div>
-                <div class="thread-action">ACCESS &raquo;</div>
-            </a>
-
-            <a href="case_closure.html" class="thread-row">
-                <div class="forum-icon">&#128274;</div>
-                <div class="thread-info">
-                    <span class="thread-title">[CLOSE] Case Closure</span>
-                    <p class="thread-desc">Finalize solved investigations, file court charges, or archive cold cases.</p>
-                </div>
-                <div class="thread-action">ACCESS &raquo;</div>
-            </a>
-
-            <a href="https://penal-code-5566a.web.app/" target="_blank" class="thread-row">
-                <div class="forum-icon">&#128216;</div>
-                <div class="thread-info">
-                    <span class="thread-title">[REF] San Andreas Penal Code</span>
-                    <p class="thread-desc">External portal for state laws, criminal charges, and sentencing guidelines.</p>
-                </div>
-                <div class="thread-action">EXTERNAL &raquo;</div>
-            </a>
-
-        </div>
-
-        <!-- Forum Footer -->
-        <div class="forum-footer">
-            <strong>AUTHORIZED PERSONNEL ONLY</strong><br>
-            San Andreas Police Department &bull; City of Los Santos &bull; Internal BBCode Records Engine<br>
-        </div>
-
     </div>
 
 </body>
