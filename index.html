@@ -1,100 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAPD INTERNAL DB</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        body {
-            background-color: #000000;
-            color: #00ff00; /* Terminal Green */
-            padding: 20px;
-        }
-
-        .db-box {
-            border: 2px solid #00ff00;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            border-bottom: 2px solid #00ff00;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        p.sub {
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-        }
-
-        a.db-btn {
-            display: block;
-            background-color: #000000;
-            color: #00ff00;
-            text-decoration: none;
-            border: 1px solid #00ff00;
-            padding: 12px;
-            margin-bottom: 10px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        a.db-btn:hover {
-            background-color: #00ff00;
-            color: #000000;
-        }
-
-        .notice {
-            border: 1px dashed #00ff00;
-            padding: 10px;
-            font-size: 11px;
-            margin-top: 20px;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-
-    <div class="db-box">
-        <div class="header">
-            <h1>[SAPD DB v1.0.4]</h1>
-            <p class="sub">SYS_LOCATION: SAN_ANDREAS/LOS_SANTOS/DETECTIVE_BUREAU</p>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col items-center justify-center p-6">
+  <div class="max-w-xl w-full bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-2xl">
+    <h1 class="text-2xl font-bold mb-2 text-white">Select a Form Template</h1>
+    <p class="text-slate-400 mb-6 text-sm">Select a document template to edit, fill out, and export.</p>
+    
+    <div class="space-y-4">
+      <!-- Template Option 1 -->
+      <a href="form/code/editor.html?file=blabla.docx" class="flex items-center justify-between bg-slate-700 hover:bg-slate-600 p-4 rounded-lg border border-slate-600 transition group">
+        <div>
+          <h2 class="font-semibold text-white group-hover:text-blue-400 transition">Template Form 1</h2>
+          <p class="text-xs text-slate-400">form/blabla.docx</p>
         </div>
+        <span class="bg-blue-600 group-hover:bg-blue-500 text-xs px-3 py-1.5 rounded text-white font-medium transition">Open Editor &rarr;</span>
+      </a>
 
-        <div class="links">
-            <a href="case_assignment.html" class="db-btn">> 01_CASE_ASSIGNMENT</a>
-            <a href="activity_log.html" class="db-btn">> 02_ACTIVITY_LOG</a>
-            <a href="Supplemental_Report.html" class="db-btn">> 03_SUPPLEMENTAL_REPORT</a>
-            <a href="Supervisor_Review.html" class="db-btn">> 04_SUPERVISOR_REVIEW</a>
-            <a href="case_closure.html" class="db-btn">> 05_CASE_CLOSURE</a>
-            <a href="https://penal-code-5566a.web.app/" target="_blank" class="db-btn">> 06_PENAL_CODE_EXT</a>
+      <!-- Template Option 2 -->
+      <a href="form/code/editor.html?file=wewe.docx" class="flex items-center justify-between bg-slate-700 hover:bg-slate-600 p-4 rounded-lg border border-slate-600 transition group">
+        <div>
+          <h2 class="font-semibold text-white group-hover:text-blue-400 transition">Template Form 2</h2>
+          <p class="text-xs text-slate-400">form/wewe.docx</p>
         </div>
-
-        <div class="notice">
-            WARNING: RESTRICTED ACCESS. ALL LOGS ARE AUDITED.<br>
-            SAN ANDREAS POLICE DEPARTMENT
-        </div>
+        <span class="bg-blue-600 group-hover:bg-blue-500 text-xs px-3 py-1.5 rounded text-white font-medium transition">Open Editor &rarr;</span>
+      </a>
     </div>
-
+  </div>
 </body>
 </html>
