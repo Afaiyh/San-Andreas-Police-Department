@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Editor</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Document Templating Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.4/pizzip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.37.11/docxtemplater.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+  
+  <header class="bg-slate-800 border-b border-slate-700 p-4 flex justify-between items-center">
+    <div class="flex items-center gap-4">
+      <a href="../../mainpage.html" class="text-sm text-slate-400 hover:text-white transition">&larr; Back to Dashboard</a>
+      <h1 id="file-title" class="font-bold text-lg text-white">Loading template...</h1>
+    </div>
+    <button id="export-btn" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2 rounded-lg text-sm font-semibold transition shadow-lg">
+      💾 Export Filled Document
+    </button>
+  </header>
+
+  <main class="flex-1 p-8 max-w-3xl mx-auto w-full">
+    <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl">
+      <h2 class="text-xl font-bold mb-2">Form Details</h2>
+      <p class="text-slate-400 text-sm mb-6">Fill in the fields below. Values will automatically populate matching <code>{PLACEHOLDERS}</code> in the document.</p>
+      
+      <form id="template-form" class="space-y-4">
+        <p class="text-slate-500 italic text-sm">Scanning template file for placeholders...</p>
+      </form>
+    </div>
+  </main>
+
+  <script src="editor.js"></script>
+</body>
+</html>
